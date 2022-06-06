@@ -40,7 +40,7 @@ contract DepositAndWithdraw is Ownable {
         return IERC20(_tokenAddress).balanceOf(msg.sender);
     }
 
-    function deposit(address _token, uint256 _amount) public payable {
+    function deposit(address _token, uint256 _amount) public {
         require(_amount > 0, "Deposit an amount greater than 0");
         require(
             balanceOfToken(_token) >= _amount,
